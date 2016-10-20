@@ -3,20 +3,19 @@
 #include <cmath>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 int main( int argc, char * argv[] ){
 	ifstream stream(argv[1]);
 	vector< int > primes;
 	vector< int > mprimes;
-	int range = 3000;
+	string line;
+	const int range = 3000;
 	int max_num = 0;
 	int two_pow = 0;
 	
-	//primes.reserve( ceil( range / log( range ) ) );
 	primes.push_back(2);
-
-	//mprimes.reserve( log( primes.capacity() ) );
 
 	for( int i = 3; i < range; i+=2 ){
 		bool is_prime = true;
@@ -37,17 +36,16 @@ int main( int argc, char * argv[] ){
 		}
 	}
 
-	while( stream >> max_num ){
+	while( getline( stream, line ) ){
+		max_num = stoi( line );
 		int i = 0;
 		while( i < mprimes.size() ){
-			if( mprimes[i] >= max_num ){
-				break;
-			}
-			else{
+			if( mprimes[i] < max_num ){
 				if( i ) cout << ", ";
 				cout << mprimes[i];
 				i++;
 			}
+			else break;
 		}
 		cout << endl;
 	}
