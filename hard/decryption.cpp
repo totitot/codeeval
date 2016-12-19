@@ -74,8 +74,6 @@ int main( int argc, char** argv ){
 	for( int i = 0; i < orig.size() ; i++ ){
 		origss[ i ] = orig[i];
 	}
-//	sort( vpss.begin(), vpss.end(), []( map<string,string>::iterator a, map<string,string>::iterator b ){ return ( stoi(a->first) ) > ( stoi(b->first) ); } );
-	//for( auto& a : vpss ) cout << a.first << " " << a.second << endl;
 	for( int i = 0 ; i < vc.size() ; i++ ){
 		cout << vc[i] << " " << orig[i] << " " << vc[i] - orig[i] << endl;
 	}
@@ -87,6 +85,5 @@ int main( int argc, char** argv ){
 	cout << vpss[1] << vpss[13] << " ";
 	cout << vpss[24] << vpss[19] << vpss[18] << vpss[21] << vpss[19] << vpss[2] << vpss[17] << vpss[13] << " " ;
 	cout << vpss[6] << vpss[13] << vpss[17] << vpss[15] << vpss[7] << vpss[1] << vpss[19] << endl;
-//	for( auto& a : vc ) cout << a << endl;
 	
 }
