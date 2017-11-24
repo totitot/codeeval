@@ -20,7 +20,7 @@ int main( int argc, char** argv ){
 			vi.push_back(input);
 		}
 
-		int distance = vi.size()-1;
+		auto distance = vi.size()-1;
 		unsigned int iter = 0;
 		do{
 			#ifdef DEBUG
